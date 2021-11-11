@@ -80,12 +80,16 @@ For those who are not as fast, familiarity with the commands over time will allo
 
 3. Copy the file to the folder you want to use as the _home folder_ for your tp.
 
-4. Double-click the file to start the app. The GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.<br>
-   ![Ui](images/AweUi.png)
-    <p align="center">
-        <a href="#tableofcontents">Click here to return to table of contents</a>
-    </p>
-    <div style="page-break-after: always;"></div>
+4. Double-click the file to start the app. The GUI similar to the below should appear in a few seconds. Note how the app contains some sample data.
+<p align="center">
+    <img src="images/AweUi.png" width="700"/>
+    <br>
+    Fig 1. Layout of AWE
+</p>
+<p align="center">
+    <a href="#tableofcontents">Click here to return to table of contents</a>
+</p>
+<div style="page-break-after: always;"></div>
 
 5. Type the command in the command box and press Enter to execute it. e.g. typing **`help`** and pressing Enter will open the help window.<br>
    Some example commands you can try:
@@ -161,7 +165,7 @@ For those who are not as fast, familiarity with the commands over time will allo
 * Do note that the [Contact-related commands](#51-contacts-commands) and
 [Expense-related commands](#53-expense-commands) both accept an index as an argument to identify which
 contact/expense to delete. On the other hand, [Group-related commands](#52-groups-commands) accept a unique group
-name as an argument. For the reasons behind this implementation, refer to our [FAQ](#4-faq)
+name as an argument. For the reasons behind this implementation, refer to our [FAQ](#4-faq).
 
 * Do not add any additional special characters when entering a command. For example, if you enter
 `deletegroup gn/Bali p/12345678` for a `deletegroup` command that is only meant to contain the special character `gn/`, 
@@ -189,8 +193,8 @@ Adds a contact to AWE.
 Format: `addcontact n/NAME p/PHONE_NUMBER [t/TAG]…​`
 
 * Contact list will be displayed after the command succeeded.
-* Duplicate contacts cannot be added into AWE
-* Contacts are duplicate if they have the same name
+* Duplicate contacts cannot be added into AWE.
+* Contacts are duplicate if they have the same name.
 * NAME are case-sensitive, "Hans" and "hans" will be treated as 2 separate person. Refer to [FAQ](#4-faq) for the rationale behind this.
 * NAME are up to 50 characters only.
 * TAG are up to 50 characters only.
@@ -224,7 +228,7 @@ Format: `editcontact INDEX [n/NAME] [p/PHONE] [t/TAG]…​`
 * You can remove all the contact’s tags by typing `t/` without specifying any tags after it.
 * NAME are up to 50 characters only.
 * TAG are up to 50 characters only.
-* PHONE_NUMBER should have between 3 and 16 numbers
+* PHONE_NUMBER should have between 3 and 16 numbers.
 
 Examples:
 *  `editcontact 1 p/91234567` Edits the phone number of the 1st contact to be `91234567`.
@@ -264,18 +268,22 @@ Finds contacts whose names contain any of the given keywords.
 
 Format: `findcontacts KEYWORD [MORE_KEYWORDS]`
 
-* The search is case-insensitive. e.g `hans` will match `Hans`
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
+* The search is case-insensitive. e.g `hans` will match `Hans`.
+* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`.
 * Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
+* Only full words will be matched e.g. `Han` will not match `Hans`.
 * contacts matching at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
+  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`.
 * When you use this command, you will be brought to the contacts page if you are currently viewing a different page.
 
 Examples:
 * `findcontacts John` returns `john` and `John Doe`
-* `findcontacts alex david` returns `Alex Yeoh`, `David Li`<br>
-  ![result for 'find alex david'](images/findAlexDavidResult.png)
+* `findcontacts alex david` returns `Alex Yeoh`, `David Li`
+<p align="center">
+    <img src="images/findAlexDavidResult.png" width="700"/>
+    <br>
+    Fig 2. Result for 'findcontacts alex david'
+</p>
 
 <p align="center">
     <a href="#tableofcontents">Click here to return to table of contents</a>
@@ -339,12 +347,12 @@ Find groups whose names contain any of the given keywords.
 
 Format: `findgroups KEYWORD [MORE_KEYWORDS]`
 
-* The search is case-insensitive. e.g `london` will match `London`
-* The order of the keywords does not matter. e.g. `United States` will match `States United`
+* The search is case-insensitive. e.g `london` will match `London`.
+* The order of the keywords does not matter. e.g. `United States` will match `States United`.
 * Only the group name is searched.
-* Only full words will be matched e.g. `London` will not match `Lond`
+* Only full words will be matched e.g. `London` will not match `Lond`.
 * Groups matching at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Taiwan Malaysia` will return `Taiwan`, `Malaysia`
+  e.g. `Taiwan Malaysia` will return `Taiwan`, `Malaysia`.
 * When you use this command, you will be brought to the groups page if you are currently viewing a different page.
 
 Examples:
@@ -367,9 +375,9 @@ Add contact in contact list into an existing travel group.
 Format: `groupaddcontact gn/GROUP_NAME n/CONTACT_NAME1 [n/CONTACT_NAME2] ...`
 
 * Group name in the user input must already be an existing group.
-* The search is case-sensitive. e.g `hans` will not match `Hans`
+* The search is case-sensitive. e.g `hans` will not match `Hans`.
 * Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
+* Only full words will be matched e.g. `Han` will not match `Hans`.
 * Type in the full name of contacts to add.
 * Duplicate members in a group/user input will not be added.
 
@@ -385,9 +393,9 @@ Remove contact in contact list from an existing travel group.
 Format: `groupremovecontact gn/GROUP_NAME n/CONTACT_NAME [n/CONTACT_NAME] ...`
 
 * Group name in the user input must already be an existing group.
-* The search is case-sensitive. e.g `hans` will not match `Hans`
+* The search is case-sensitive. e.g `hans` will not match `Hans`.
 * Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
+* Only full words will be matched e.g. `Han` will not match `Hans`.
 * Type in the full name of contacts to remove.
 * Members can only be removed if they are in the travel group.
 
@@ -408,8 +416,8 @@ Add tag for an existing travel group.
 Format: `groupaddtag gn/GROUP_NAME t/TAG [t/TAG2] ...`
 
 * Group name in the user input must already be an existing group.
-* The search is case-sensitive. e.g `bali` will not match `Bali`
-* Only full words will be matched e.g. `Bal` will not match `Bali`
+* The search is case-sensitive. e.g `bali` will not match `Bali`.
+* Only full words will be matched e.g. `Bal` will not match `Bali`.
 * Duplicate tags in a group/user input will not be added.
 * TAG are up to 50 characters only.
 
@@ -447,8 +455,8 @@ Edit group name for an existing travel group.
 Format: `groupeditname gn/OLD_GROUP_NAME gn/NEW_GROUP_NAME`
 
 * Group name in the user input must already be an existing group.
-* The search is case-sensitive. e.g `bali` will not match `Bali`
-* Only full words will be matched e.g. `Bal` will not match `Bali`
+* The search is case-sensitive. e.g `bali` will not match `Bali`.
+* Only full words will be matched e.g. `Bal` will not match `Bali`.
 * GROUP_NAME are up to 50 characters only.
 
 Examples:
@@ -474,7 +482,11 @@ Format: `expenses gn/GROUP_NAME`
 
 Examples: 
 * `expenses gn/London` shows all the expenses of the group named London.
-![result for 'expenses gn/London](images/ShowExpenseResult.png)
+<p align="center">
+    <img src="images/ShowExpenseResult.png" width="700"/>
+    <br>
+    Fig 3. Result for 'expenses gn/London'
+</p>
 
 <p align="center">
     <a href="#tableofcontents">Click here to return to table of contents</a>
@@ -536,12 +548,12 @@ Finds expenses within the specified group which descriptions contain any of the 
 
 Format: `findexpenses KEYWORD [MORE_KEYWORDS] gn/GROUP_NAME`
 
-* The search is case-insensitive. e.g `dinner` will match `Dinner`
-* The order of the keywords does not matter. e.g. `Dinner Transportation` will match `Transportation Dinner`
+* The search is case-insensitive. e.g `dinner` will match `Dinner`.
+* The order of the keywords does not matter. e.g. `Dinner Transportation` will match `Transportation Dinner`.
 * Only the description is searched.
-* Only full words will be matched e.g. `Dinner` will not match `Dinners`
+* Only full words will be matched e.g. `Dinner` will not match `Dinners`.
 * Expenses matching at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Dinner Transportation` will return `Friday dinner`, `Transportation tickets`
+  e.g. `Dinner Transportation` will return `Friday dinner`, `Transportation tickets`.
 * When you use this command, you will be brought to the expense page for the specified group if you are currently viewing a different page.
 
 Examples:
@@ -565,7 +577,11 @@ Format: `transactionsummary gn/GROUP_NAME`
 Examples:
 * `transactionsummary gn/Bali`
 * `transactionsummary gn/London`
-  ![result for `transactionsummary gn/London`](images/TransactionSummaryResult.png)
+<p align="center">
+    <img src="images/TransactionSummaryResult.png" width="700"/>
+    <br>
+    Fig 4. Result for 'transactionsummary gn/London'
+</p>
 
 **Note:** When a `contact` is deleted or removed from the group, the functioning of this command does not change. The deleted contact may still be part of the list of spending depending on the expenses they had previously.
 
@@ -581,13 +597,17 @@ Format: `calculatepayments gn/GROUP_NAME`
 
 * GROUP_NAME is a mandatory field.
 * A group with GROUP_NAME as its name must exist.
-* Output e.g. [`John pays Mark $20.50`, `Sara pays Dev $15`]
+* Output e.g. [`John pays Mark $20.50`, `Sara pays Dev $15`].
 * When you use this command, you will be brought to the payments page for the specified group if you are currently viewing a different page.
 
 Examples:
 * `calculatepayments gn/Bali`
-* `calculatepayments gn/London`<br>
-  ![result for 'calculatepayments gn/London'](images/CalculatePaymentResult.png)
+* `calculatepayments gn/London`
+<p align="center">
+    <img src="images/CalculatePaymentResult.png" width="700"/>
+    <br>
+    Fig 5. Result for 'calculatepayments gn/London'
+</p>
   
 **Note:** When a `contact` is deleted or removed from the group, the functioning of this command does not change. The deleted contact may still be part of the list of payments depending on the expenses they had previously.
 
@@ -602,7 +622,12 @@ Examples:
 
 Shows a message explaining how to access the help page.
 
-![help message](images/helpMessage.png)
+<p align="center">
+    <img src="images/helpMessage.png" width="650"/>
+    <br>
+    Fig 6. Help message
+</p>
+  
 
 Format: `help`
 
@@ -612,7 +637,7 @@ Clears all entries from AWE.
 
 Format: `clearalldata`
 
-* After clearing of data, `contacts` page will be shown
+* After clearing of data, `contacts` page will be shown.
 
 #### 3.4.3. Exiting the program : `exit`
 
@@ -631,9 +656,9 @@ AWE data are saved in the hard disk automatically after any command that changes
 
 #### 3.4.5. Editing the data file
 
-AWE data are saved as a JSON file `[JAR file location]/data/awe.json`. Advanced users are welcome to update data directly by editing that data file.
+AWE data is saved as a JSON file `[JAR file location]/data/awe.json`. Advanced users are welcome to update data directly by editing that data file.
 
-* If the contact details in the JSON file is changed without making the same changes to expenses, AWE will treat the old and new contacts as separate contacts.
+* If the contact details in the JSON file are changed without making the same changes to expenses, AWE will treat the old and new contacts as separate contacts.
 
 <div markdown="span" class="alert alert-warning">
 :exclamation: **Caution:**
@@ -671,19 +696,23 @@ argument. This minimizes the chances of accidentally deleting a group.
 **Q**: How do I transfer my data to another computer?<br>
 **A**: Install AWE on the other computer and replace the empty data file it creates with the data file used by the AWE on your previous computer.
 
-**Q**: What if the Jar file does not open properly when I double click on it?<br>
-**A**: Open a command prompt in that folder and run the command `java -jar awe.jar`.
-
 <p align="center">
     <a href="#tableofcontents">Click here to return to table of contents</a>
 </p>
 <div style="page-break-after: always;"></div>
 
+
+**Q**: What if the Jar file does not open properly when I double click on it?<br>
+**A**: Open a command prompt in that folder and run the command `java -jar awe.jar`.
+
 **Q**: What do I do if I see `awe.jar` cannot be opened because it is from an unidentified developer when I double click the jar file on a mac?<br>
 **A**: Go to `System Preferences -> Security and Privacy -> General` and click on `Open anyways` as such
 <p align="center">
     <img src="images/MacSecurityPreference.png" width="600"/>
+    <br>
+    Fig 7. Mac security preference
 </p>
+
 <br>
 <br>
 If your questions are not answered in the FAQ, check out the issue page on our GitHub linked [here](https://github.com/AY2122S1-CS2103T-F13-1/tp/issues).
